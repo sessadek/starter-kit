@@ -1,0 +1,32 @@
+@import 'tools/sprite';
+$red: #f0f;
+
+body {
+  position: static;
+  padding-top: 30px;
+  padding-bottom: 45px;
+  font-family: Arial;
+  background-color: $red;
+}
+
+h1 {
+  position: relative;
+  left: -50%;
+  font-size: 58px;
+  transform: translateX(50%);
+}
+
+h2 {
+  font-family: sans-serif;
+  font-size: 32px;
+}
+
+h3 {
+  font-size: 28px;
+}
+
+
+h4 {
+  font-size: 15px;
+  color: #ecf;
+}

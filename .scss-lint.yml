@@ -1,0 +1,12 @@
+scss_files: 'source/scss/local/**/*.scss'
+
+exclude: 'source/scss/vendor/**/*.scss'
+
+linters:
+  BorderZero:
+    enabled: false
+
+  Indentation:
+  	enabled: false
+    severity: warning
+    width: 2

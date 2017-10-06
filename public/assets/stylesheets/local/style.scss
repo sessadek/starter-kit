@@ -1,0 +1,12 @@
+@import "tools/sprite"; $red:#F0F;
+
+BODY { background-color:$red; }
+
+H1 { font-size:58px; -webkit-transform:translateX(50%); -ms-transform:translateX(50%); transform:translateX(50%); position:relative; left:-50%; }
+
+H2 { font-family:sans-serif; font-size:32px; }
+
+H3 { font-size:28px; }
+
+
+H4 { font-size:15px; color:red; }

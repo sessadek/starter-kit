@@ -1,0 +1,40 @@
+%icon {
+	display: inline-block;
+  	background-image: url(sprite.png);
+}
+.icon-facebook:before {
+  @extend %icon;
+  background-position: 0px 0px;
+  width: 24px;
+  height: 24px;
+}
+.icon-linkedin:before {
+  @extend %icon;
+  background-position: -29px 0px;
+  width: 24px;
+  height: 24px;
+}
+.icon-map:before {
+  @extend %icon;
+  background-position: 0px -29px;
+  width: 24px;
+  height: 24px;
+}
+.icon-skype:before {
+  @extend %icon;
+  background-position: -29px -29px;
+  width: 24px;
+  height: 24px;
+}
+.icon-twitter:before {
+  @extend %icon;
+  background-position: -58px 0px;
+  width: 24px;
+  height: 24px;
+}
+.icon-youtube:before {
+  @extend %icon;
+  background-position: -58px -29px;
+  width: 24px;
+  height: 24px;
+}
