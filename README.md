@@ -2,9 +2,9 @@
 
 Gulp c'est un outil d'automatisation les taches répétitives
 
-pour lancer le startr on a besion d'installer node.js [http://nodejs.org](http://nodejs.org)
+pour lancer le startr on a besion d'installer node.js [https://nodejs.org](https://nodejs.org)
 
-pour update de voter verson node utiliser chocolaty [http://chocolaty.org](http://chocolaty.org)
+pour update de voter version node utiliser chocolaty [https://chocolatey.org/](https://chocolatey.org/)
 
 puis lancer la commande si dessus pour installer gulp de maniere general sur votre machine
 
