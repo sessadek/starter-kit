@@ -1,9 +1,7 @@
 module.exports = {
   "projectName": "Boilerplate Pyxicom",
   "cmsName": "drupal",
-  "host": "www.startr.dev",
-  "cmsName": "drupal",
-  "projectName": "Boilerplate Pyxicom",
+  "host": "www.kit.com",
   "themeColor": "#ffffff",
   "browserList": ["> 2%", "last 2 versions", "ie >= 9"],
   "styles": {
@@ -22,8 +20,8 @@ module.exports = {
     "src": "./public/*.html"
   },
   "images": {
-    "src": "source/images/*",
-    "dest": "public/images"
+    "src": "source/medias/images/*",
+    "dest": "public/medias/images"
   },
   "sprites": {
     "srcImg": "source/images/sprites/*.png",
@@ -37,7 +35,7 @@ module.exports = {
     "srcFile": "source/medias/favicon/faviconData.json"
   },
   "iconFont": {
-    "src": ["source/icons/*.svg"],
+    "src": ["source/medias/icons/*.svg"],
     "tpl": "source/tpl/_iconfont.scss",
     "destScss": "source/scss/local/utils",
     "dest": "public/assets/fonts/"

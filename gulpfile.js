@@ -34,10 +34,7 @@ var fs = require('fs');
 var browserSync = require('browser-sync').create();
 var reload      = browserSync.reload;
 var ngrok = require('ngrok');
-
 var psi = require('psi');
-var site = "www.kit.com";
-var key = "";
 
 // Please feel free to use the `nokey` option to try out PageSpeed
 // Insights as part of your build process. For more frequent use,
@@ -48,6 +45,9 @@ var key = "";
 /*************************************/
 
 var config = require("./config");
+
+var site = config.host;
+var key = "";
 
 /*************************************/
 
@@ -63,7 +63,7 @@ require("./tasks/sprites.task")(gulp, plugins, buffer, config);
 require("./tasks/styles.task")(gulp, plugins, browserSync, config);
 require("./tasks/stylesVendor.task")(gulp, plugins, browserSync, config);
 require("./tasks/html.task")(gulp, browserSync, config);
-require("./tasks/favicon.task")(gulp, realFavicon);
+require("./tasks/favicon.task")(gulp, realFavicon, config, FAVICON_DATA_FILE);
 require("./tasks/faviconInject.task")(gulp, realFavicon);
 require("./tasks/faviconUpdate.task")(gulp, realFavicon);
 require("./tasks/iconfont.task")(gulp, plugins);

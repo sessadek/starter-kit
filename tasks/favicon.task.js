@@ -3,7 +3,7 @@
 // you should run it whenever RealFaviconGenerator updates its
 // package (see the check-for-favicon-update task below).
 
-module.exports = function(gulp, realFavicon, config) {
+module.exports = function(gulp, realFavicon, config, FAVICON_DATA_FILE) {
   gulp.task('favicon', function(done) {
     realFavicon.generateFavicon({
       masterPicture: config.favicon.src,
