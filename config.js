@@ -1,4 +1,8 @@
 module.exports = {
+  "projectName": "Boilerplate Pyxicom",
+  "cmsName": "drupal",
+  "host": "www.kit.dev",
+  "themeColor": "#ffffff",
   "styles": {
     "src": "source/scss/local/**/*.scss",
     "dest": "public/assets/stylesheets/local"
@@ -35,8 +39,5 @@ module.exports = {
     "destScss": "public/assets/stylesheets/local",
     "dest": "public/assets/fonts/"
   },
-  "browserList": ["> 2%", "last 2 versions", "ie >= 9"],
-  "themeColor": "#ffffff",
-  "projectName": "Boilerplate Pyxicom",
-  "cmsName": "drupal"
+  "browserList": ["> 2%", "last 2 versions", "ie >= 9"]
 }

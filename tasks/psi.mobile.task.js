@@ -17,3 +17,15 @@ module.exports = function(gulp, psi, site) {
 	  }, cb);
 	});
 }
+
+
+// gulp.task('mobile', function () {
+//     return psi(site, {
+//         // key: key
+//         nokey: 'true',
+//         strategy: 'mobile',
+//     }).then(function (data) {
+//         console.log('Speed score: ' + data.ruleGroups.SPEED.score);
+//         console.log('Usability score: ' + data.ruleGroups.USABILITY.score);
+//     });
+// });

@@ -1,5 +1,4 @@
 module.exports = function(gulp, plugins, browserSync, config) {
-
   gulp.task('styles', ['sprites'], function () {
     return gulp.src(config.styles.src)
       .pipe(plugins.plumber({

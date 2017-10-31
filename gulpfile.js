@@ -36,8 +36,13 @@ var reload      = browserSync.reload;
 var ngrok = require('ngrok');
 
 var psi = require('psi');
-var site = "http://www.kit.dev";
+var site = "www.kit.com";
 var key = "";
+
+// Please feel free to use the `nokey` option to try out PageSpeed
+// Insights as part of your build process. For more frequent use,
+// we recommend registering for your own API key. For more info:
+// https://developers.google.com/speed/docs/insights/v2/getting-started
 
 
 /*************************************/
@@ -68,13 +73,13 @@ require("./tasks/psi.desktop.task")(gulp, psi, site);
 require("./tasks/psi.mobile.task")(gulp, psi, site);
 require("./tasks/ngrok.task")(gulp, ngrok);
 
-gulp.task('psi', function (cb) {
-  return runSequence(
-    'ngrok',
-    'psi:desktop',
-    // 'psi:mobile',
-    cb
-  );
-});
+// gulp.task('psi', function (cb) {
+//   return runSequence(
+//     'ngrok',
+//     'psi:desktop',
+//     // 'psi:mobile',
+//     cb
+//   );
+// });
 
 gulp.task('default', ['styles', 'scripts', 'html', 'imagemin', 'watch', 'server']);
