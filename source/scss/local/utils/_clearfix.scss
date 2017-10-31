@@ -21,13 +21,3 @@
     *zoom: 1;
   }
 }
-
-%clearfix {
-  @include clearfix;
-}
-
-.clearfix {
-  @extend %clearfix;
-}
-
-

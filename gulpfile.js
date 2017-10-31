@@ -52,7 +52,7 @@ var config = require("./config");
 /*************************************/
 
 // File where the favicon markups are stored
-var FAVICON_DATA_FILE = 'faviconData.json';
+var FAVICON_DATA_FILE = config.favicon.srcFile;
 
 /*************************************/
 

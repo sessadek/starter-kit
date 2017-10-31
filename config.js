@@ -1,16 +1,11 @@
 module.exports = {
-<<<<<<< HEAD
   "projectName": "Boilerplate Pyxicom",
   "cmsName": "drupal",
-  "host": "www.kit.dev",
-  "themeColor": "#ffffff",
-=======
+  "host": "www.startr.dev",
   "cmsName": "drupal",
   "projectName": "Boilerplate Pyxicom",
-  "host": "www.startr.dev"
   "themeColor": "#ffffff",
   "browserList": ["> 2%", "last 2 versions", "ie >= 9"],
->>>>>>> 57153dcfea5091febf69dcc8427f7c67769e82d9
   "styles": {
     "src": "source/scss/local/**/*.scss",
     "dest": "public/assets/stylesheets/local"
@@ -18,7 +13,6 @@ module.exports = {
   "stylesVendor": {
     "src": "source/scss/vendor/foundation/assets/*.scss",
     "dest": "public/assets/stylesheets/vendor/foundation"
-
   },
   "scripts": {
     "src": ["source/scripts/*.js", "!source/scripts/*.min.js"],
@@ -38,19 +32,14 @@ module.exports = {
     "destScss": "source/scss/local/utils"
   },
   "favicon": {
-    "src": "source/favicon/favicon.png",
-    "dest": "public/medias/favicon"
+    "src": "source/medias/favicon/favicon.png",
+    "dest": "public/medias/favicon",
+    "srcFile": "source/medias/favicon/faviconData.json"
   },
   "iconFont": {
     "src": ["source/icons/*.svg"],
     "tpl": "source/tpl/_iconfont.scss",
     "destScss": "source/scss/local/utils",
     "dest": "public/assets/fonts/"
-<<<<<<< HEAD
-  },
-  "browserList": ["> 2%", "last 2 versions", "ie >= 9"]
-}
-=======
   }
 }
->>>>>>> 57153dcfea5091febf69dcc8427f7c67769e82d9
