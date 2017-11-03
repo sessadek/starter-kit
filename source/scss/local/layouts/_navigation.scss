@@ -1,3 +1,61 @@
 /////////////////////////////////////
-//  navigation
+//  navigation Menu
 ////////////////////////////////////
+
+.menu{
+    display: block;
+    position: relative;
+    text-align: left;
+    // width: 100%;
+    height:$menu__height;
+    font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+    font-size: 0;
+    background: #6680bb;
+    &__item{
+        $item: &;
+        position: relative;
+        display: inline-block;
+        width: auto;
+        letter-spacing: normal;
+        word-spacing: normal;
+    
+        &__link{
+            position: relative;
+            display: block;
+            height: $menu__height;
+            line-height: $menu__height;
+            padding-left: $menu__item__padding ;
+            padding-right: $menu__item__padding ;
+            text-align: center;
+            color: $menu__item__color;
+            font-family: "Arial";
+            font-size: 1rem;
+            text-transform: uppercase;
+            -webkit-transition: all 0.4s ease;
+            transition: all 0.4s ease;
+            background: $menu__item__background;
+
+            
+        
+            #{$item}:hover &,#{$item}--active &{
+
+                background: $menu__item__background__active;
+                color: $menu__item__color__active;
+            }
+
+        }
+    }
+    &__dropdown{
+        $itemdropdown: &;    
+        &__sub-menu{
+            position: absolute;
+            display: block;
+            #{$itemdropdown}:hover &{
+                display: block;
+            }
+        .menu__item{
+            width: 100%;
+        }    
+        }
+    }
+}

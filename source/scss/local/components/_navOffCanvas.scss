@@ -1,0 +1,86 @@
+$ease: 0.3s all;
+
+.c-nav__icon {
+  z-index: 101;
+  $sideMenu: rem(30);
+  position: relative;
+  position: fixed;
+  top: 5px;
+  right: 15px;
+  display: none;
+  width: rem(45);
+  height: rem(45);
+  cursor: pointer;
+  @include bp-lt($small) {
+    display: block;
+  }
+  span {
+    $strokeHeight: rem(7);
+    border-radius: 3px;
+    display: block;
+    text-indent: -9999px;
+    width: $sideMenu;
+    height: $strokeHeight;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    transition: $ease;
+
+    &:before,
+    &:after {
+      display: block;
+      position: absolute;
+      content: '';
+      width: $sideMenu;
+      height: $strokeHeight;
+      transition: $ease;
+      border-radius: rem(2);
+    }
+
+    &:before {
+      top: rem(-11);
+      transform: rotate(0deg);
+
+    }
+
+    &:after {
+      bottom: rem(-11);
+      transform: rotate(0deg);
+    }
+  }
+
+  span, span:before, span:after {
+    background: $white;
+  }
+
+  &.is-active {
+    span {
+      background-color: transparent;
+
+      &:before {
+        top: 0;
+        transform: rotate(45deg);
+      }
+
+      &:after {
+        bottom: 0;
+        transform: rotate(-45deg);
+      }
+    }
+  }
+}
+
+.c-nav__close {
+  position: fixed;
+  top: 54px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.3);
+  z-index: 99;
+  display: none;
+  &.is-active {
+    display: block;
+  }
+}

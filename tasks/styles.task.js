@@ -11,13 +11,13 @@ module.exports = function(gulp, plugins, browserSync, config) {
         }
       }))
       .pipe(plugins.sourcemaps.init())
-      .pipe(plugins.sassLint({
-        options: {
-          configFile: '.scss-lint.yml'
-        }
-      }))
-      .pipe(plugins.sassLint.format())
-      .pipe(plugins.sassLint.failOnError())
+      // .pipe(plugins.sassLint({
+      //   options: {
+      //     configFile: '.scss-lint.yml'
+      //   }
+      // }))
+      // .pipe(plugins.sassLint.format())
+      // .pipe(plugins.sassLint.failOnError())
       .pipe(plugins.sass({
         outputStyle: 'compressed'
       }).on('error', plugins.sass.logError))

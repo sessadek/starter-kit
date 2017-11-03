@@ -13,9 +13,9 @@ module.exports = function(gulp, realFavicon, config, FAVICON_DATA_FILE) {
         ios: {
           pictureAspect: 'noChange',
           assets: {
-            ios6AndPriorIcons: false,
-            ios7AndLaterIcons: false,
-            precomposedIcons: false,
+            ios6AndPriorIcons: true,
+            ios7AndLaterIcons: true,
+            precomposedIcons: true,
             declareOnlyDefaultIcon: true
           }
         },
@@ -25,12 +25,12 @@ module.exports = function(gulp, realFavicon, config, FAVICON_DATA_FILE) {
           backgroundColor: config.themeColor,
           onConflict: 'override',
           assets: {
-            windows80Ie10Tile: false,
+            windows80Ie10Tile: true,
             windows10Ie11EdgeTiles: {
-              small: false,
+              small: true,
               medium: true,
-              big: false,
-              rectangle: false
+              big: true,
+              rectangle: true
             }
           }
         },
@@ -44,8 +44,8 @@ module.exports = function(gulp, realFavicon, config, FAVICON_DATA_FILE) {
             declared: true
           },
           assets: {
-            legacyIcon: false,
-            lowResolutionIcons: false
+            legacyIcon: true,
+            lowResolutionIcons: true
           }
         },
         safariPinnedTab: {
@@ -55,7 +55,7 @@ module.exports = function(gulp, realFavicon, config, FAVICON_DATA_FILE) {
       },
       settings: {
         scalingAlgorithm: 'Mitchell',
-        errorOnImageTooSmall: false
+        errorOnImageTooSmall: true
       },
       markupFile: FAVICON_DATA_FILE
     }, function() {

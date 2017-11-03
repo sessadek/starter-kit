@@ -1,10 +1,25 @@
 @charset 'utf-8';
 
+/************** config *************/
 
 @import 'config';
+
+/************** settings *************/
+
+@import 'settings';
 
 /************** variables *************/
 
 @import 'variables/colors';
+@import 'variables/zIndex';
+@import 'base/breakpoints';
+
+/************** base *************/
+
+@import 'base/reset';
+
+/************** layouts *************/
+
+@import 'layouts/navigation';
 
 /************** utils *************/
