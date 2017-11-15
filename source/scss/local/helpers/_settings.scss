@@ -1,0 +1,140 @@
+// ==================================================
+// Settings
+// ==================================================
+	//ex: $fontBody    : 'RenaultLifeRegular', 'cursive', serif, sans-serif;
+	//ex: $mainColor   : #212121 !default;
+
+	$white : #ffffff !default;
+	$black : #000000 !default;
+	
+	$error : #ce5959 !default;
+	$success : #82bf71 !default;
+	$info : #f0f0f0 !default;
+	
+	$selectionColor : $white !default;
+	$selectionBackground : $black !default;
+	
+	$mainBranding : $black !default;
+	$subBranding : $white !default;
+	
+	$mainFont : $subBranding !default;
+
+	//Menu
+	$menu__height : 60px;
+	$menu__item__padding : 24px;
+	$menu__item__color: #ffffff;
+	$menu__item__background: transparent;
+	$menu__item__background__active: #f86700;
+	$menu__item__color__active: #ffffff;
+
+	// nav 
+	$nav--height : 60;
+	$nav--item--level1--minWidth : 200;
+	$nav--background--active : #000000;
+	$nav--color : #000000;
+	$nav--color--active : #ffffff;
+	$nav--fontfamily : 'Arial';
+	$nav--fontsize : 16;
+	$nav--itemPadding : 24;
+	$nav--offcanvas--bp : 1200;
+	$nav--icon--background : #000000;
+
+
+	$offCanvas--offset--top : 0;
+	$offCanvas--width : 280;
+	$offcanvas--nav--item--height : 45;
+	
+
+	// zindex 
+	$zindex--background     : 40;
+	$zindex--content        : 50;
+	$zindex--hover          : 60;
+	$zindex--fixed          : 70;
+	$zindex--offcanvas      : 80;
+
+
+
+
+	// gutter & grid
+
+	$max--width: 1400;
+	$gutter: 10;
+
+
+	
+// breakpoints
+
+
+
+// chrome inspector
+$mobileS                : 20em !default;        //320px
+$mobileM                : 23.4375em !default;   //375px
+$mobileL                : 26.5625em !default;   //425px
+$tablet                 : 48em !default;        //768px
+$medium					: 64em !default;		//1024px
+// customs
+$small                 	: 41.6875em !default;   //667px
+$xsmall                 : 26.25em !default;     //420px
+$mobileXl               : 31.25em !default;     //500px
+$tabletS                : 36.25em !default;     //580px
+$tooltip--xlarge        : 93.75em !default      //1500px
+$desktopXxL             : 125em !default        //2000px
+$desktop                : 75em !default         //1200px
+$desktopL               : 81.25em !default      //1300px
+$desktopXL              : 100em !default        //1600px
+
+// breadcrumb
+$breadcrumb--height : 42;
+$breadcrumb--border : solid 1px $black;
+$breadcrumb--color : $black;
+$breadcrumb--color--alt : $black;
+$breadcrumb--fontfamily : 'Arial';
+$breadcrumb--fontsize : rem(13);
+$breadcrumb__padding : 10px;
+$breadcrumb__margin : 10px;
+
+// wysiwyg
+$wysiwyg--fontbody : 'Arial';
+$wysiwyg--fonttitle : 'Arial';
+$wysiwyg--items--margin--bottom: 24;
+
+$wysiwyg--h2--color: $black;
+$wysiwyg--h3--color: $black;
+$wysiwyg--h4--color: $black;
+$wysiwyg--h5--color: $black;
+$wysiwyg--h6--color: $black;
+$wysiwyg--link--color: $black;
+$wysiwyg--list--style--color: $black;
+$wysiwyg--table--border--color: $black;
+$wysiwyg--content--color: $black;
+$wysiwyg--table--th--color: $white;
+
+$wysiwyg--hr--background: 1px solid $black;
+$wysiwyg--table--th--background: $black;
+
+// inputs
+$input--border--color: $black;
+$input--border--width: 1;
+$input--height: 48;
+$input--margin: 24;
+$input--background: $white;
+$input--padding: 20;
+
+$label--color: $black;
+$label--fontfamily: 'Arial';
+$label--fontsize: 16;
+
+$checkboxRadio--width: 14;
+$checkboxRadio--background: $black;
+
+$gototop--width: 45;
+$gototop--bottom: 14;
+$gototop--right: 14;
+$gototop--background: $black;
+$gototop--hover: $black;
+$gototop--borderRadius: 50%;
+
+
+// frame & video
+
+$frame--margin: rem(25);

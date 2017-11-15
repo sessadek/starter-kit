@@ -1,0 +1,187 @@
+// /----- Success (Green)
+$success--color: #75aa61 !default;
+ 
+// /----- Info (Blue)
+$info--color: #6181aa !default;
+ 
+// /----- Warning (Yellow)
+$warning--color: #cecf60 !default;
+ 
+// /----- Error (Red)
+$error--color: #ae6872 !default;
+
+// ----- Base Alert Extend
+// ----- Base Alert Extend
+
+
+$images: '../img/';
+
+
+// variables
+
+
+$alert--padding: 20 !default;
+$alert--margin--bottom: 20 !default;
+$alert--radius: 4 !default;
+$alert--color: #fff !default;
+
+$alert--signe--width: 25 !default;
+$alert--signe--background: rgba(255,255,255,0.2) !default;
+
+$alert--signe--left: 15 !default;
+
+// small
+$alert--small--padding: 10 !default;
+$alert--small--fontSize: 12 !default;
+
+$alert--small--signe--width: 18 !default;
+
+// large
+$alert--large--padding: 30 !default;
+$alert--large--fontSize: 24 !default;
+
+$alert--large--signe--width: 40 !default;
+
+
+[class^="alert"] {
+	width: 100%;
+  padding: rem($alert--padding);
+  padding-left: rem($alert--padding * 2.5);
+  margin-bottom: rem($alert--margin--bottom);
+  display:inline-block;
+  border-radius:rem($alert--radius);
+  position: relative;
+  p, &:before {
+    float:left;
+  }
+
+  &:before {
+    width:rem($alert--signe--width);
+    height:rem($alert--signe--width);
+    display:inline-block;
+    content:'';
+    border-radius:100%;
+    background:url('#{$images}icon-sprite--alert.png') no-repeat;
+    background-color: $alert--signe--background;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: #{$alert--signe--left}px;
+  }
+
+  &, p {
+    color: $alert--color;
+  }
+}
+
+[class^="alert"][class*="small"] {
+	padding: rem($alert--small--padding);
+	padding-left: rem($alert--small--padding * 4);
+  &, p {
+    font-size: rem($alert--small--fontSize);
+  }
+  &:before {
+    width: rem($alert--small--signe--width);
+    height: rem($alert--small--signe--width);
+  }
+}
+
+
+
+[class^="alert"][class*="large"] {
+	padding: rem($alert--large--padding);
+	padding-left: rem($alert--large--padding * 2.5);
+  &, p {
+    font-size: rem($alert--large--fontSize);
+  }
+  &:before {
+    width: rem($alert--large--signe--width);
+    height: rem($alert--large--signe--width);
+  }
+}
+
+
+// success alert
+[class^="alert"][class*="success"] {
+	background: $success--color;
+	&:before {
+    background-position:-47px 7px;
+  }
+}
+
+
+[class^="alert"][class*="success"][class*="small"] {
+	&:before {
+    background-position:4px 5px;
+  }
+}
+
+[class^="alert"][class*="success"][class*="large"] {
+	&:before {
+    background-position:-89px 13px;
+  }
+}
+
+// info alert
+[class^="alert"][class*="info"] {
+	background: $info--color;
+	&:before {
+    background-position: -47px -82px;
+  }
+}
+
+
+[class^="alert"][class*="info"][class*="small"] {
+	&:before {
+    background-position: 4px -57px;
+  }
+}
+
+[class^="alert"][class*="info"][class*="large"] {
+	&:before {
+    background-position: -89px -108px;
+  }
+}
+
+// warning alert
+[class^="alert"][class*="warning"] {
+	background: $warning--color;
+	&:before {
+    background-position: -47px -171px;
+  }
+}
+
+
+[class^="alert"][class*="warning"][class*="small"] {
+	&:before {
+    background-position: 4px -116px;
+  }
+}
+
+[class^="alert"][class*="warning"][class*="large"] {
+	&:before {
+    background-position: -89px -232px;
+  }
+}
+
+
+// error alert
+[class^="alert"][class*="error"] {
+	background: $error--color;
+	&:before {
+    background-position: -47px -261px;
+  }
+}
+
+
+[class^="alert"][class*="error"][class*="small"] {
+	&:before {
+    background-position: 4px -177px;
+  }
+}
+
+[class^="alert"][class*="error"][class*="large"] {
+	&:before {
+    background-position: -89px -354px;
+  }
+}

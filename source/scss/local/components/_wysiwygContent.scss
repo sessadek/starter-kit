@@ -1,0 +1,174 @@
+// ========================================= //
+// wysiwygContent
+// ========================================= //
+
+
+h1, .h1 {
+  font-family: $wysiwyg--fonttitle;
+  font-size: rem(36);
+  font-weight: 700;
+  color: $wysiwyg--h2--color;
+  margin-bottom: rem($wysiwyg--items--margin--bottom);
+}
+
+h2, .h2 {
+  font-family: $wysiwyg--fonttitle;
+  font-size: rem(26);
+  font-weight: 700;
+  color: $wysiwyg--h2--color;
+  margin-bottom: rem($wysiwyg--items--margin--bottom);
+}
+
+h3, .h3 {
+  font-family: $wysiwyg--fonttitle;
+  font-size: rem(20);
+  font-weight: 400;
+  color: $wysiwyg--h3--color;
+  margin-bottom: rem($wysiwyg--items--margin--bottom);
+}
+
+h4, .h4 {
+  font-family: $wysiwyg--fonttitle;
+  font-size: rem(17);
+  color: $wysiwyg--h4--color;
+  font-weight: 700;
+  margin-bottom: rem($wysiwyg--items--margin--bottom);
+}
+
+h5, .h5 {
+  font-family: $wysiwyg--fonttitle;
+  font-size: rem(17);
+  color: $wysiwyg--h4--color;
+  font-weight: 700;
+  margin-bottom: rem($wysiwyg--items--margin--bottom);
+}
+
+h6, .h6 {
+  font-family: $wysiwyg--fonttitle;
+  font-size: rem(16);
+  color: $wysiwyg--h6--color;
+  font-weight: 400;
+  font-style: italic;
+  margin-bottom: rem($wysiwyg--items--margin--bottom);
+}
+
+img {
+  &.alignright,
+  &.align-right {
+      float: right;
+      margin-left: rem(2*$wysiwyg--items--margin--bottom);
+      margin-bottom: rem($wysiwyg--items--margin--bottom);
+  }
+
+  &.alignleft,
+  &.align-left {
+      float: left;
+      margin-right: rem(2*$wysiwyg--items--margin--bottom);
+      margin-bottom: rem($wysiwyg--items--margin--bottom);
+  }
+
+  &.aligncenter,
+  &.align-center {
+      display: block;
+      clear: both;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: rem($wysiwyg--items--margin--bottom);
+  }
+}
+
+p {
+  font-family: $wysiwyg--fontbody;
+  font-size: rem(15);
+  line-height: rem(28);
+  color: $wysiwyg--content--color;
+  margin-bottom: rem($wysiwyg--items--margin--bottom);
+
+  @include bp-lt($small) {
+      font-size: rem(14);
+      line-height: rem(26);
+  }
+}
+
+a {
+  color: $wysiwyg--link--color;
+  text-decoration: underline;
+}
+
+blockquote {
+  position: relative;
+  display: block;
+  padding-bottom: rem(15);
+  margin-left: rem(40);
+  padding-left: rem(40);
+  padding-top: rem(20);
+  margin-bottom: rem($wysiwyg--items--margin--bottom);
+  border: none;
+  color: $wysiwyg--content--color;
+  font-size: rem(18);
+  font-family: $wysiwyg--fontbody;
+  letter-spacing: rem(2);
+  text-align: justify;
+  text-align-last: left;
+
+  &:before {
+      content: '';
+      background-color: $wysiwyg--content--color;
+      display: block;
+      width: 3px;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+  }
+  @include bp-lt($small) {
+      margin-left: 0;
+      padding-left: rem(30);
+  }
+}
+
+table {
+  width: 100%;
+  table-layout: auto;
+  text-align: center;
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin-bottom: rem($wysiwyg--items--margin--bottom);
+
+  td, th {
+      border: solid 1px $wysiwyg--table--border--color;
+      vertical-align: middle;
+  }
+
+  thead {
+      tr {
+          th {
+              background: $wysiwyg--table--th--background;
+              color: $wysiwyg--table--th--color;
+              height: rem(48);
+              font-size: rem(16);
+              font-weight: 700;
+              font-family: $wysiwyg--fontbody;
+          }
+      }
+  }
+
+  th {}
+
+  tbody {
+      td {
+          height: rem(48);
+          font-size: rem(15);
+      }
+  }
+
+  tr { background: $white; }
+}
+
+hr {
+  clear: both;
+  margin-bottom: rem($wysiwyg--items--margin--bottom);
+  border-color: $wysiwyg--hr--background;
+}
+

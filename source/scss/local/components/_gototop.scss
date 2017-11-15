@@ -1,0 +1,43 @@
+// ==================================================
+// goToTop
+// ==================================================
+
+// variables
+
+$gototop--width: 40 !default;
+$gototop--background: #fff !default;
+$gototop--color: #fff !default;
+$gototop--bottom: 20 !default;
+$gototop--right: 30 !default;
+
+
+
+.c-action__gototop {
+  z-index: 1;
+  position: fixed;
+  bottom: #{$gototop--bottom}px;
+  right: #{$gototop--right}px;
+  display: none;
+  width: rem($gototop--width);
+  height: rem($gototop--width);
+  font-size: rem(30);
+  text-align: center;
+  border-radius: 100%;
+  background-color: transparentize($gototop--background, 0.2);
+  transition: 0.3s background-color;
+  color: $gototop--color;
+  cursor: pointer;
+  line-height: rem(40);
+  &:before {
+    content: "\f106";
+    display: block;
+    margin: 0 auto;
+    @include fonts;
+  }
+  &:hover {
+    background-color: $gototop--background;
+  }
+  @include bp-lt($medium) {
+    right: 10px;
+  }
+}

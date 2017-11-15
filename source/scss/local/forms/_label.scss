@@ -1,0 +1,12 @@
+label.error,
+.messages--error {
+	font-family: $wysiwyg--fontbody;
+	color: $error;
+	font-size: rem(12);
+}
+
+label.error {
+	position: absolute;
+	bottom: 2px;
+	left: 0;
+}

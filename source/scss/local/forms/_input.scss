@@ -1,0 +1,205 @@
+%grid--wrapper {
+	max-width: rem($max--width);
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: rem($gutter);
+	padding-right: rem($gutter);
+}
+
+form {
+	@extend %grid--wrapper;
+}
+// inputs
+
+[type=color],
+[type=date],
+[type=datetime-local],
+[type=datetime],
+[type=email],
+[type=month],
+[type=number],
+[type=password], 
+[type=search], 
+[type=tel], 
+[type=text], 
+[type=time], 
+[type=url], 
+[type=week], 
+textarea,
+select {
+	box-shadow: none;
+	outline: none;
+	font-family: $wysiwyg--fontbody;
+	font-size: rem(16);
+  border: 1px solid $black;
+  height: rem(38);
+  margin-bottom: rem($input--margin);
+	-webkit-appearance: none;
+ 	-moz-appearance:    none;
+ 	appearance:         none;
+	padding-left: rem($input--padding);
+	@include placeholder-color($black);
+
+}
+
+[type=submit] {
+	outline: none;
+}
+
+input[type=number] {
+  -moz-appearance:textfield;
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
+
+
+// checkbox & radio
+
+
+$checkboxRadio--width: 14;
+$checkboxRadio--background: $black;
+
+
+.checkbox,
+.radio {
+	margin-bottom: 30px;
+	[type=checkbox],
+	[type=radio] {
+		@extend %visibility-hidden;
+		margin-bottom: $input--margin;
+  	&:checked + label:after {
+      transform: scale(1);
+    }
+	}
+	label {
+		position: relative;
+		padding-left: rem(35);
+		&:before,
+    &:after {
+	    content: '';
+	    display: inline-block;
+	    position: absolute;
+    }
+    &:before {
+      width: rem(20);
+      height: rem(20);
+      border: 1px solid $black;
+      top: -3px;
+      left: 0;
+    }
+    &:after {
+      width: rem(8);
+      height: rem(8);
+      background-color: $black;
+      position: absolute;
+      top: 3px;
+      left: 6px;
+      transform: scale(0);
+      transition: 0.3s transform;
+    }
+	}
+}
+
+
+// checkbox
+
+
+.checkbox {
+	label:before,
+  label:after {
+    border-radius: 2px;
+  }
+}
+
+// radio button
+
+.radio {
+	label:before,
+  label:after {
+    border-radius: 100%;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.input-style {
+	border: 1px solid $black;
+  // background-color: #f1e5e6;
+  padding: 0;
+  margin-top: 5px;
+
+
+  // max-width: 80%;
+  font-size: rem(20);
+  // font-weight: 700;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  cursor: pointer;
+  display: block;
+  overflow: hidden;
+  height: rem(38);
+  vertical-align: middle;
+  margin-bottom: 25px;
+
+  span {
+    // width: 200px;
+    width: 60%;
+    min-height: 2em;
+    display: inline-block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    vertical-align: top;
+    font-family: $wysiwyg--fontbody;
+    padding: 10px 15px;
+    font-size: rem(16);
+    color: #a6a6a6;
+    font-weight: 400;
+  }
+  strong {
+  	height: 100%;
+    color: #f1e5e6;
+    background-color: $success;
+    display: inline-block;
+    font-family: $wysiwyg--fontbody;
+    float: right;
+    padding: 7px 15px;
+  } 
+}
+
+
+// input file
+
+.form-file {
+	@extend %visibility-hidden;
+}

@@ -1,0 +1,324 @@
+// ========================================= //
+// nav
+// ========================================= //
+
+.o-nav {
+    position: relative;
+
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    .c-nav__level0 {
+        display: block;
+        position: relative;
+        text-align: left;
+        width: 100%;
+        height: rem($nav--height);
+        @include clearfix;
+        @include inlineblockHolder;
+
+        > li {
+            position: relative;
+            display: inline-block;
+            width: auto;
+            @include inlineblockItem;
+
+            > a {
+                position: relative;
+                z-index: $zindex--hover;
+                height: rem($nav--height);
+                width: 100%;
+                padding-left: rem($nav--itemPadding);
+                padding-right: rem($nav--itemPadding);
+                text-align: center;
+                color: $nav--color;
+                font-family: $nav--fontfamily;
+                font-size: rem($nav--fontsize);
+                text-transform: uppercase;
+                transition: all .4s ease;
+                background: transparent;
+                @include alignTextMiddle;
+
+                &:hover, &.is-active {
+                    background: $nav--background--active;
+                    color: $nav--color--active;
+                }
+            }
+        }
+    }
+
+    .c-nav__level1 {
+        display: none;
+        position: absolute;
+        z-index: $zindex--content;
+        left: 0;
+        width: 100%;
+        min-width: rem($nav--item--level1--minWidth);
+        background: $nav--background--active;
+        padding-top: rem(24);
+        padding-bottom: rem(24);
+
+        &.is-visible {
+            display: block;
+        }
+
+        li {
+            display: block;
+            width: 100%;
+            padding-left: rem(24);
+            padding-right: rem(24);
+            margin-bottom: rem(10);
+            text-align: left;
+
+            @include bp-lt($desktop) {
+                margin-bottom: 0;
+                padding: 0;
+            }
+
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+        }
+
+        a {
+            position: relative;
+            display: inline-block;
+            font-size: rem(14);
+            font-family: $nav--fontfamily;
+            background: transparent;
+            transition: all .4s ease;
+            color: $nav--color--active;
+
+            @include bp-lt($desktop) {
+                display: block;
+                width: 100%;
+                padding-top: rem(12);
+            }
+
+            &:before {
+                content: '>';
+                color:  $nav--color--active;
+                margin-right: rem(7);
+                transition: all .4s ease;
+
+                @include bp-lt($desktop) {
+                    display: none;
+                }
+            }
+
+            &:after {
+                @include bp-lt($desktop) {
+                    display: none !important;
+                }
+            }
+
+            &:hover:before {
+                margin-right: rem(18);
+            }
+        }
+    }
+}
+
+
+
+
+.no-touchevents {
+    .o-nav .c-nav__level0 > li:hover {
+        & > a {
+            background: $nav--background--active;
+            color: $nav--color--active;
+        }
+
+        .c-nav__level1 {
+            display: block;
+
+            @include bp-gt(#{$nav--offcanvas--bp}px) {
+                @include animation('displayNoneToFadeIn .4s 1');
+            }
+        }
+    }
+}
+
+
+// navOffCanvas
+
+
+$border--offcanvas: solid rem(1) rgba($white, .1);
+$navBackgrond : $mainBranding;
+$navColor : $white;
+
+.o-nav {
+    @include bp-lt(#{$nav--offcanvas--bp}px) {
+        position: fixed;
+        top: 0;
+        right: 0;
+        z-index: 100;
+        width: rem($offCanvas--width);
+        height: 100%;
+        border-left: $border--offcanvas;
+        background: $navBackgrond;
+
+        overflow-y: scroll;
+        -webkit-overflow-scrolling: touch;
+        overflow-scrolling: touch;
+        -ms-overflow-style: none;
+        &::-webkit-scrollbar { width: 0 !important }
+
+        .c-nav__level0 {
+            padding-left: 0;
+            height: auto;
+
+            &:before { display: none; }
+
+            > li {
+                position: relative;
+                display: block;
+                width: 100%;
+                float: none;
+                border-bottom: $border--offcanvas;
+
+                a {
+                    padding-left: rem(20);
+                    padding-right: rem(20);
+                    height: rem($offcanvas--nav--item--height);
+                    text-align: left;
+                    color: $navColor;
+
+                    &:hover {
+                        background: $navColor;
+                        color: $navBackgrond;
+                    }
+                }
+            }
+        }
+
+        .c-nav__level1 {
+            position: fixed;
+            z-index: 110;
+            top: 0;
+            display: block;
+            float: none;
+            width: rem(280);
+            left: inherit;
+            height: 100%;
+            transform: inherit;
+            background: $navBackgrond;
+            padding-top: 0;
+            border-left: $border--offcanvas;
+
+            overflow-y: scroll;
+            -webkit-overflow-scrolling: touch;
+            overflow-scrolling: touch;
+            -ms-overflow-style: none;
+            &::-webkit-scrollbar { width: 0 !important }
+
+            > li {
+                position: relative;
+
+                a {
+                    height: rem($offcanvas--nav--item--height);
+                    color: $navColor;
+                    border-bottom: $border--offcanvas;
+                }
+            }
+        }
+    }
+
+    .c-nav__show {
+        position: absolute;
+        display: none;
+        top: 0;
+        right: 0;
+        width: rem($offcanvas--nav--item--height);
+        height: rem($offcanvas--nav--item--height);
+        background: $navBackgrond;
+        border-left: $border--offcanvas;
+        text-align: center;
+        color: $white;
+        font-size: rem(20);
+        cursor: pointer;
+        transition: all .4s ease;;
+        z-index: $zindex--hover;
+
+        @include bp-lt(#{$nav--offcanvas--bp}px) {
+            @include alignTextMiddle;
+        }
+
+        &:hover {
+            background: $white;
+            color: $navBackgrond;
+        }
+
+        [class*='c-fdbm__icon'] {
+            position: relative;
+            top: rem(2);
+        }
+    }
+
+    li.c-nav__hide {
+        position: relative;
+        display: none !important;
+        width: 100%;
+        height: rem($offcanvas--nav--item--height);
+        color: $white;
+        border-bottom: $border--offcanvas;
+        text-align: center;
+        text-transform: uppercase;
+        cursor: pointer;
+
+        @include bp-lt(#{$nav--offcanvas--bp}px) {
+            display: block !important;
+        }
+
+        .c-text {
+            font-size: rem(12);
+            font-family: $nav--fontfamily;
+            height: 100%;
+            @include alignTextMiddle;
+        }
+
+        [class*='c-fdbm__icon'] {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: rem($offcanvas--nav--item--height);
+            height: rem($offcanvas--nav--item--height);
+            border-right: $border--offcanvas;
+            background: transparent;
+            transition: all .4s ease;;
+
+            &:before {
+                position: absolute;
+                top: rem(12);
+                left: rem(12);
+                font-size: rem(20);
+            }
+        }
+
+        &:hover {
+            [class*='c-fdbm__icon'] {
+                background: $white;
+                color: $mainBranding;
+            }
+        }
+    }
+}
+
+.o-nav,
+.o-nav .c-nav__level1 {
+    transition: all .4s ease;;
+
+    @include bp-lt(#{$nav--offcanvas--bp}px) {
+        right: 0;
+        transform: translateX(100%);
+    }
+
+    &.is-inViewport {
+        @include bp-lt(#{$nav--offcanvas--bp}px) {
+            transform: translateX(0);
+        }
+    }
+}

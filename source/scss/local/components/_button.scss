@@ -1,0 +1,35 @@
+
+
+$button--color: #fefefe !default;
+$button--background: #000 !default;
+$button--fontSize: 14 !default;
+
+$button--margin: 16 !default;
+$button-padding: 16 !default;
+$button-transition: background-color 0.25s ease-out, color 0.25s ease-out !default;
+$button-radius: 0;
+
+[class*="button"] {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 0 rem($button--margin) 0;
+  font-family: inherit;
+  padding: rem($button-padding * 0.8) rem($button-padding);
+  -webkit-appearance: none;
+  border: 1px solid transparent;
+  border-radius: #{$button-radius}px;
+  transition: $button-transition;
+  font-size: rem($button--fontSize);
+  line-height: 1;
+  text-align: center;
+  cursor: pointer;
+  background-color: $button--background;
+  color: $button--color;
+}
+
+
+[class*="transparency"] {
+	border-color: $button--background;
+	background-color: transparent;
+	color: $button--background;
+}

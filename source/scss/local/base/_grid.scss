@@ -1,3 +1,62 @@
-/////////////////////////////////////
-//  grid
-////////////////////////////////////
+// ==================================================
+// Grids
+// ==================================================
+
+
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+}
+
+// variables
+$columns: 12 !default;
+$grid--width: 1400 !default;
+$gutter: 20 !default;
+
+
+$small: 640px !default;
+$medium: 1024px !default;
+
+// columns
+[class^="col-"] {
+  position: relative;
+  float:left;
+  padding-right:rem($gutter/2);
+  padding-left:rem($gutter/2);
+  min-height: 1px;
+  background-color: red;
+  border: 1px solid green;
+  text-align: center;
+}
+
+
+@for $i from 1 through $columns {
+	.col-sm-#{$i} {
+		width: $i/$columns * 100%;
+	}
+}
+
+@media only screen and (min-width: $small) {
+	@for $i from 1 through $columns {
+		.col-md-#{$i} {
+			width: $i/$columns * 100%;
+		}
+	}
+}
+
+@media only screen and (min-width: $medium) {
+	@for $i from 1 through $columns {
+		.col-lg-#{$i} {
+			width: $i/$columns * 100%;
+		}
+	}
+}
+
+// grid container 
+.row {
+	max-width: rem($grid--width);
+	margin-left: auto;
+	margin-right: auto;
+	@include clearfix;
+}

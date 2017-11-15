@@ -1,0 +1,84 @@
+// ==================================================
+// Tabs
+// ==================================================
+
+// variables
+
+
+$tabs-item-margin: 0 !default;
+$tabs-item-background: #fff !default;
+$tabs-item-color: #4c4c4c !default;
+
+$tabs-link-padding: 15 !default;
+$tabs-link-backgroundColor: #eee !default;
+$tabs-link-color: #4c4c4c !default;
+$tabs-link-color--hover: #ddd !default;
+$tabs-link-fontSize: 16 !default;
+$tabs-link-fontWeight: 400 !default;
+$tabs-link-radius: 0 !default;
+$tabs-link-text-decoration: none !default;
+$tabs-link-transition: all linear 0.15s !default;
+
+
+
+$tabs-content-padding: 15 !default;
+$tabs-content-radius: 0 !default;
+$tabs-content-backgroundColor: 0 !default;
+$tabs-content-border: 1px solid #eee !default;
+/*----- Tabs -----*/
+.tabs {
+  width:100%;
+  display:inline-block;
+}
+ 
+/*----- Tab Links -----*/
+/* Clearfix */
+.tab-links {
+  &:after {
+    display:block;
+    clear:both;
+    content:'';
+  }
+  li {
+    margin:0px rem($tabs-item-margin);
+    float:left;
+    list-style:none;
+    &.active a, &.active a:hover {
+      background: $tabs-item-background;
+      color: $tabs-item-color;
+    }
+  }
+  a {
+    padding:rem($tabs-link-padding / 2) rem($tabs-link-padding);
+    display:inline-block;
+    border-radius:#{$tabs-link-radius}px #{$tabs-link-radius}px 0 0;
+    background:$tabs-link-backgroundColor;
+    font-size: rem($tabs-link-fontSize);
+    font-weight:$tabs-link-fontWeight;
+    color: $tabs-link-color;
+    transition: $tabs-link-transition;
+    text-decoration: $tabs-link-text-decoration;
+    border: 1px solid $tabs-link-color--hover;
+    &:hover {
+      background: $tabs-link-color--hover;
+      text-decoration:none;
+    }
+  }
+}
+
+
+/*----- Content of Tabs -----*/
+.tab-content {
+  padding: rem($tabs-content-padding);
+  border-radius:#{$tabs-content-radius}px;
+  // box-shadow:-1px 1px 1px rgba(0,0,0,0.15);
+  background: $tabs-content-backgroundColor;
+  border: $tabs-content-border;
+}
+
+.tab-panel {
+  display:none;
+  &.active {
+    display:block;
+  }
+}

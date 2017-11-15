@@ -1,0 +1,151 @@
+// ==================================================
+// menu
+// ==================================================
+
+$menu--background: #6680bb !default;
+
+.menu{
+    display: block;
+    position: relative;
+    text-align: left;
+    // width: 100%;
+    height:$menu__height;
+    font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+    font-size: 0;
+    background: $menu--background;
+    &__item{
+        $item: &;
+        position: relative;
+        display: inline-block;
+        width: auto;
+        letter-spacing: normal;
+        word-spacing: normal;
+        &__link,
+        &__back{
+            position: relative;
+            display: block;
+            height: $menu__height;
+            line-height: $menu__height;
+            padding-left: $menu__item__padding ;
+            padding-right: $menu__item__padding ;
+            text-align: center;
+            color: $menu__item__color;
+            font-family: "Arial";
+            font-size: 1rem;
+            text-transform: uppercase;
+            -webkit-transition: all 0.4s ease;
+            transition: all 0.4s ease;
+            background: $menu__item__background;
+
+            @include bp-gt($medium) {
+                #{$item}:hover &,#{$item}--active &{
+
+                    background: $menu__item__background__active;
+                    color: $menu__item__color__active;
+                }
+            }
+        }
+        &__back {
+            display: none;
+            span:after {
+	        	@include fonts;
+	        	font-size: rem(24);
+	        	content: "\f104";
+	            position: absolute;
+	            top: 50%;
+	            left: 25px;
+				transform: translateY(-50%);
+	        }
+        }
+    }
+    &__dropdown{
+        $itemdropdown: &;
+        &__sub-menu{
+            position: absolute;
+            display: none;
+            z-index: 1;
+            @include bp-gt($medium) {
+                #{$itemdropdown}:hover &{
+                    display: block;
+                }
+            }
+        	.menu__item{
+            	width: 100%;
+        	}    
+        }
+    }
+}
+
+
+$widthCanvas: 280; // width menu in responsive
+
+$breakpointOffCanvas: $medium; // point du responsive menu 1024px
+
+@include bp-lt($breakpointOffCanvas) {
+	.menu {
+		display: block;
+		height: 100%;
+		position: fixed;
+		top: 0;
+		right: 0;
+		z-index: 101;
+		width: rem($widthCanvas);
+		transform: translateX(100%);
+		border-left: 1px solid #fff;
+	    overflow-y: scroll;
+	    -webkit-overflow-scrolling: touch;
+	    overflow-scrolling: touch;
+	    -ms-overflow-style: none;
+	    &::-webkit-scrollbar { width: 0 !important }
+		&__item{
+	        $item: &;
+	        display: block;
+	        &:not(:last-child) {
+	        	border-bottom: 1px solid #fff;
+	        }
+	        
+	    }
+	    &__item__back {
+	        border-bottom: 1px solid #fff;
+            display: block;
+	    }
+	    &__dropdown{
+	        $itemdropdown: &;
+	        &__sub-menu{
+	            position: static;
+	            display: block;
+	            height: 100%;
+		        position: fixed;
+		        top: 0;
+		        right: 0;
+			    z-index: 102;
+		        width: rem($widthCanvas);
+		        transform: translateX(100%);
+		        background: #6680bb;
+		        overflow-y: scroll;
+			    -webkit-overflow-scrolling: touch;
+			    overflow-scrolling: touch;
+			    -ms-overflow-style: none;
+			    &::-webkit-scrollbar { width: 0 !important }
+	        }
+	        & > .menu__item__link {
+		        &:after {
+		        	@include fonts;
+		        	font-size: rem(24);
+		        	content: "\f105";
+		            position: absolute;
+		            top: 50%;
+		            right: 25px;
+    				transform: translateY(-50%);
+		        }
+		    }
+	    }
+	    &,
+		&__dropdown__sub-menu {
+			transition: all .4s ease;
+			&.is-inViewport {
+				transform: translateX(0);
+			}
+		}
+	}
+}

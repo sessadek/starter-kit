@@ -1,0 +1,34 @@
+// ==================================================
+// Class &  helpers
+// ==================================================
+	//ex: .clear-both{clear: both;}
+
+
+
+// visibility hidden
+
+%visibility-hidden {
+	width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+
+
+.visibility-hidden {
+	@extend %visibility-hidden;
+}
+
+
+// grid container
+
+%grid--wrapper {
+	max-width: rem($max--width);
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: rem($gutter);
+	padding-right: rem($gutter);
+}

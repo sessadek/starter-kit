@@ -1,0 +1,87 @@
+// ========================================= //
+// Content Front
+// ========================================= //
+
+.c-wysiwyg {
+	@import "wysiwygContent";
+	ul, ol {
+	  list-style: none;
+	  margin-left: 0;
+	  margin-bottom: rem($wysiwyg--items--margin--bottom);
+	  margin-left: rem(30);
+
+	  @include bp-lt($small) {
+      margin-left: rem(15);
+	  }
+
+	  ul, ol {
+	  }
+
+	  li {
+      position: relative;
+
+      &:before {
+        position: absolute;
+      }
+
+      &, * {
+        font-size: rem(15);
+        margin-bottom: rem(10);
+        font-family: $wysiwyg--fontbody;
+      }
+	  }
+	}
+
+	ul {
+	  li:before {
+      content: '';
+      top: rem(9);
+      left: rem(-20);
+      display: block;
+      width: rem(7);
+      height: rem(7);
+      background: $wysiwyg--list--style--color;
+      border-radius: 50%;
+	  }
+
+	  ul li:before {
+      background: $wysiwyg--list--style--color;
+      width: rem(5);
+      height: rem(5);
+	  }
+	}
+
+	ol {
+	  counter-reset: section;
+
+	  li:before {
+      counter-increment: section;
+      content: counter(section) '.';
+      color: $wysiwyg--list--style--color;
+      font-weight: 700;
+      font-style: normal;
+      left: rem(-20);
+	  }
+	}
+}
+
+
+
+.c-table__wrapper {
+  width: 100%;
+  overflow-y: auto;
+  _overflow: auto;
+  // margin: 0 0 $gutter;
+
+  &::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: rem(14);
+    height: rem(14);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: rem(8);
+    border: rem(3) solid $white;
+    background-color: $mainBranding;
+  }
+}

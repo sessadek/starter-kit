@@ -1,0 +1,239 @@
+// ==================================================
+// mixins
+// ==================================================
+	// prefix 
+	@mixin prefix($name, $value) {
+	  -webkit-#{$name}: $value;
+	  -moz-#{$name}: $value;
+	  -ms-#{$name}: $value;
+	  -o-#{$name}: $value;
+	  #{$name}: $value;
+	}
+
+	//border-radius 
+	// Usage:
+	//      => 
+			 // @include border-radius(5px);
+			 // @include border-radius(5px 10px);
+			 // @include border-radius(5px 10px 20px);
+			 // @include border-radius(5px 10px 20px 30px);
+	@mixin border-radius($val...) {
+	  @include prefix(border-radius, $val);
+	}
+
+
+	$browser-context: 16; // Default
+	
+	// Convert px to em
+	@function em($pixels, $context: $browser-context) {
+			@return #{$pixels/$context}em
+	}
+	
+	// Convert px to rem
+	@function rem($pixels, $context: $browser-context) {
+			@return #{$pixels/$context}rem
+	}
+
+	@mixin clearfix {
+    &:after{
+        content:"";
+        display:table;
+        clear:both;
+    }
+
+    &:before, &:after {
+        content: "";
+        display: table;
+    }
+
+    &:after { clear: both; }
+    & { *zoom:1; }
+}
+
+
+@mixin inlineblockHolder() {
+	letter-spacing: -0.31em;
+	text-rendering: optimizespeed;
+	font-family: FreeSans, Arimo, "Droid Sans", Helvetica, Arial, sans-serif;
+}
+
+@mixin inlineblockItem() {
+	display: inline-block;
+	letter-spacing: normal;
+	word-spacing: normal;
+	text-rendering: auto;
+}
+
+
+
+// align
+
+@mixin alignBlockMiddle() {
+	display: flex;
+	align-items: center;
+}
+
+@mixin alignTextMiddle() {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+}
+
+@mixin alignTextMiddle__inline() {
+	display: inline-flex;
+	justify-content: center;
+	flex-direction: column;
+}
+
+
+// breakpoints
+
+
+// Breakpoint greater than
+@mixin bp-gt($device-width) {
+	@media screen and (min-width: $device-width +1) {
+			@content
+	}
+}
+
+// Breakpoint lower than
+@mixin bp-lt($device-width) {
+	@media screen and (max-width: $device-width) {
+			@content
+	}
+}
+
+// Breakpoint between
+@mixin bp-bt($min-device-width, $max-device-width) {
+	@media screen and (min-width: $min-device-width +1) and (max-width: $max-device-width) {
+			@content
+	}
+}
+
+
+
+// animation
+
+
+@mixin animation($animate...) {
+    $max: length($animate);
+    $animations: '';
+
+    @for $i from 1 through $max {
+        $animations: #{$animations + nth($animate, $i)};
+
+        @if $i < $max {
+            $animations: #{$animations + ", "};
+        }
+    }
+    -webkit-animation: $animations;
+    -moz-animation:    $animations;
+    -o-animation:      $animations;
+    animation:         $animations;
+}
+
+@mixin keyframes($animationName) {
+    @-webkit-keyframes #{$animationName} {
+        @content;
+    }
+    @-moz-keyframes #{$animationName} {
+        @content;
+    }
+    @-o-keyframes #{$animationName} {
+        @content;
+    }
+    @keyframes #{$animationName} {
+        @content;
+    }
+}
+@include keyframes(displayNoneToFadeIn) {
+	0% {
+			display: none;
+			opacity: 0;
+	}
+	0.001% {
+			display: block;
+			opacity: 0;
+	}
+	100% {
+			display: block;
+			opacity: 1;
+	}
+}
+
+
+
+// Change placeholder color
+// Internet Explorer 10+ (!)
+@mixin placeholder-color($color) {
+  &::-webkit-input-placeholder { /* WebKit browsers */
+    color:$color;
+  }
+  &:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color:$color;
+    opacity:1;
+  }
+  &::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color:$color;
+    opacity:1;
+  }
+  &:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color:$color;
+  }
+}
+
+// Cross browser opacity
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity=$opacity-ie); //IE8
+}
+
+// font awesome
+
+@mixin fonts {
+	display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+// SVG background images with PNG and retina fallback
+$image-path: '../img' !default;
+$fallback-extension: 'png' !default;
+$retina-suffix: '@2x';
+@mixin background-image($name, $size:false){
+    background-image: url(#{$image-path}/#{$name}.svg);
+    @if($size){
+        background-size: $size;
+    }
+    .no-svg &{
+        background-image: url(#{$image-path}/#{$name}.#{$fallback-extension});
+
+        @media only screen and (-moz-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+          background-image: url(#{$image-path}/#{$name}#{$retina-suffix}.#{$fallback-extension});
+        }
+    }
+}
+
+
+
+// Visually hide an element
+
+%visuallyhidden {
+  margin: -1px;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip: rect(0, 0, 0, 0);
+  position: absolute;
+}
+
+.visually-hidden {
+  @extend %visuallyhidden;
+}

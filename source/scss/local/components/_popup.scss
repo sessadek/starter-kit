@@ -1,0 +1,60 @@
+// ==================================================
+// PopUp
+// ==================================================
+
+// variables
+
+$popup--width: 700 !default;
+$popup--padding: 40 !default;
+$popup--radius: 3 !default;
+$popup--background: #fff !default;
+
+$popup--close--width: 30 !default;
+$popup--close--color: #fff !default;
+$popup--close--background: rgba(0,0,0,0.8) !default;
+
+
+$transition--popup: ease 0.25s all !default;
+
+/* Outer */
+.popup {
+    width:100%;
+    height:100%;
+    display:none;
+    position:fixed;
+    top:0px;
+    left:0px;
+    background:rgba(0,0,0,0.75);
+    /* Inner */
+		&__inner {
+		  max-width: rem($popup--width);
+		  width:90%;
+		  padding:rem($popup--padding);
+		  position:absolute;
+		  top:50%;
+		  left:50%;
+		  -webkit-transform:translate(-50%, -50%);
+		  transform:translate(-50%, -50%);
+		  box-shadow:0px 2px 6px rgba(0,0,0,1);
+		  border-radius:#{$popup--radius}px;
+		  background:$popup--background;
+		}
+
+		/* Close Button */
+		&__close {
+		  width:rem($popup--close--width);
+		  height:rem($popup--close--width);
+		  display:inline-block;
+		  position:absolute;
+		  top:0px;
+		  right:0px;
+		  -webkit-transform:translate(50%, -50%);
+		  transform:translate(50%, -50%);
+		  border-radius:100%;
+		  background:$popup--close--background;
+		  font-size:20px;
+		  text-align:center;
+		  line-height:100%;
+		  color: $popup--close--color;
+		}
+}

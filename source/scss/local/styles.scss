@@ -1,25 +1,66 @@
-@charset 'utf-8';
+// ==================================================
+// Framework
+// ==================================================
+	//ex: bootstrap...
+	
+// ==================================================
+// Plugin
+// ==================================================
+@import "plugin/normalize"; 
 
-/************** config *************/
 
-@import 'config';
+// ==================================================
+// Helpers
+// ==================================================
+	@import "helpers/settings";
+	@import "helpers/mixins";
+	@import "helpers/helpers";
 
-/************** settings *************/
 
-@import 'settings';
 
-/************** variables *************/
+// ==================================================
+// Base
+// ==================================================
 
-@import 'variables/colors';
-@import 'variables/zIndex';
-@import 'base/breakpoints';
 
-/************** base *************/
+	@import "base/grid";
+	@import "base/fonts";
+	@import "base/reset";
+	@import "base/layout";
+	@import "base/typography";
 
-@import 'base/reset';
+	
 
-/************** layouts *************/
+// ==================================================
+// Components
+// ==================================================
 
-@import 'layouts/navigation';
+	@import "components/button";
+	@import "components/alerts";
+	@import "components/contentFront";
+	@import "components/blocks";
+	@import "components/forms";
+	@import "components/menu";
+	@import "components/navOffCanvas";
+	@import "components/breadcrumbs";
+	@import "components/frame";
+	@import "components/tabs";
+	@import "components/accordion";
+	@import "components/popup";
+	@import "components/gototop";
 
-/************** utils *************/
+// ==================================================
+// Forms
+// ==================================================
+	@import "forms/input";
+	@import "forms/label";
+	@import "forms/select";
+	@import "forms/file";
+	@import "forms/checkbox";
+	@import "forms/radio";
+// ==================================================
+// Pages
+// ==================================================
+	@import "pages/home";
+	//ex: @import "pages/decline";
+	//ex: @import "pages/cms";
