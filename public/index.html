@@ -1,73 +1,359 @@
 <!DOCTYPE html>
 <html lang="fr" xml:lang="fr" class=" no-touchevents">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Home</title>
-    <meta name="description" content="" />
-    <link rel="shortcut icon" type="image/x-icon" href="medias/favicon/favicon.ico">
-    <link rel="icon" type="image/x-icon" href="medias/favicon/favicon.ico">
-    <link rel="icon" type="image/png" href="medias/favicon/favicon.png" />
-	<link rel="stylesheet" href="assets/stylesheets/local/styles.css">
+    <meta name="description" content="">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-TileImage" content="/mstile-144x144.png">
+    <meta name="theme-color" content="#ffffff">
 </head>
 <body>
-	<header>
-		<nav>
-			<ul class="menu">
-				<li class="menu__item">
-					<a href="#" class="menu__item__link">Menu Item#1</a>
-				</li>
-				<li class="menu__item">
-					<a href="#" class="menu__item__link">Menu Item#2</a>
-				</li>
-				<li class="menu__item">
-					<a href="#" class="menu__item__link">Menu Item#3</a>
-				</li>
-				<li class="menu__item">
-					<a href="#" class="menu__item__link">Menu Item#4</a>
-				</li>
-				<li class="menu__item">
-					<a href="#" class="menu__item__link">Menu Item#5</a>
-				</li>
-				<li class="menu__dropdown menu__item">
-					<a href="#" class="menu__item__link">Menu Item#6</a>
-					<ul class="menu__dropdown__sub-menu">
-						<li class="menu__item">
-							<a href="#" class="menu__item__link">Menu Sub Item#1</a>
-						</li>
-						<li class="menu__item">
-							<a href="#" class="menu__item__link">Menu Sub Item#2</a>
-						</li>
-						<li class="menu__item">
-							<a href="#" class="menu__item__link">Menu Sub Item#3</a>
-						</li>
-						<li class="menu__item">
-							<a href="#" class="menu__item__link">Menu Sub Item#4</a>
-						</li>
-						<li class="menu__item">
-							<a href="#" class="menu__item__link">Menu Sub Item#5</a>
-						</li>
-					</ul>
-				</li>
-			</ul>
-		</nav>
-	</header>
+    <span class="c-nav__close"></span>
+    <div class="c-nav__icon">
+        <span></span>
+    </div>
+    <div class="global">
+        <header>
+            <nav class="main__menu">
+                <ul class="menu">
+                    <li class="menu__item">
+                        <a class="menu__item__link" href="#">item1</a>
+                    </li>
+                    <li class="menu__item">
+                        <a class="menu__item__link" href="#">item2</a>
+                    </li>
+                    <li class="menu__dropdown menu__item ">
+                        <a class="menu__item__link" href="#">item3 fsdfsd</a>
+                        <ul class="menu__dropdown__sub-menu">
+                            <li class="menu__item__back"><span>back</span></li>
+                            <li class="menu__item ">
+                                <a class="menu__item__link" href="#">item31</a>
+                            </li>                                
+                            <li class="menu__item ">
+                                <a class="menu__item__link" href="#">item32</a>
+                            </li>                                
+                        </ul>
+                    </li>
+                    <li class="menu__item">
+                        <a class="menu__item__link" href="#">item4</a>
+                    </li>
+                    <li class="menu__item">
+                        <a class="menu__item__link" href="#">item5</a>
+                    </li>
+                    <li class="menu__item">
+                        <a class="menu__item__link" href="#">item6</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <div class="content">
+            <div class="c-breadcrumb">
+                <ol class="c-breadcrumb__list">
+                    <li><a href="/">Acceuil</a></li>
+                    <li><a href="#">ItemBreadcrumb#1</a></li>
+                    <li>ItemBreadcrumb#2</li>
+                </ol>
+            </div>
+        </div>
+        <!-- alert message -->
+        <div class="row content">
+            <h1>Alert</h1>
+            <h2>Small Alerts</h2>
+            <div class="alert-success-small">
+                This is a small <strong>success</strong> alert box. As you can see it's green.
+            </div>
+            <div class="alert-info-small">
+                This is a small <strong>info</strong> alert box. As you can see it's blue.
+            </div>
+            <div class="alert-warning-small">
+                This is a small <strong>warning</strong> alert box. As you can see it's yellow.
+            </div>
+            <div class="alert-error-small">
+                This is a small <strong>error</strong> alert box. As you can see it's red.
+            </div>
+            <hr>
+            <h2>Default Alerts</h2>
+            <div class="alert-success">
+                This is a small <strong>success</strong> alert box. As you can see it's green.
+            </div>
+            <div class="alert-info">
+                This is a <strong>info</strong> alert box. As you can see it's blue.
+            </div>
+            <div class="alert-warning">
+                This is a <strong>warning</strong> alert box. As you can see it's yellow.
+            </div>
+            <div class="alert-error">
+                This is a <strong>error</strong> alert box. As you can see it's red.
+            </div>
+            <hr>
+            <h2>Large Alert</h2>
+            <div class="alert-success-large">
+                This is a large <strong>success</strong> alert box. As you can see it's green.
+            </div>
+            <div class="alert-info-large">
+                This is a large <strong>info</strong> alert box. As you can see it's blue.
+            </div>
+            <div class="alert-warning-large">
+                This is a large <strong>warning</strong> alert box. As you can see it's yellow.
+            </div>
+            <div class="alert-error-large">
+                This is a large <strong>error</strong> alert box. As you can see it's red.
+            </div>
+        </div>
+        <!-- System de grid -->
+        <div class="row content">
+            <div class="col-lg-2 col-sm-12">large 2 | small 12</div>
+            <div class="col-lg-2 col-sm-12">large 2 | small 12</div>
+            <div class="col-lg-2 col-sm-12">large 2 | small 12</div>
+            <div class="col-lg-2 col-sm-12 col-lg-center">large 2 | small 12</div>
+            <div class="col-lg-2 col-sm-12">large 2 | small 12</div>
+            <div class="col-lg-2 col-sm-12">large 2 | small 12</div>
+        </div>
+        <div class="row content">
+            <div class="col-md-4 col-lg-6">medium 4 | large 6</div>
+            <div class="col-md-4 col-lg-6">medium 4 | large 6</div>
+            <div class="col-md-4 col-lg-6">medium 4 | large 6</div>
+        </div>
+        <form action="" class="form content" id="form">
+            <div class="form-item">
+                <label for="input--text--01">Input text 01<span class="required">*</span></label>
+                <input type="text" id="input--text--01" name="input--text--01">
+            </div>
+            <div class="form-item">
+                <label for="input--text--02">Input text 02<span class="required">*</span></label>
+                <input type="text" id="input--text--02" name="input--text--02">
+            </div>
+            <div class="form-item">
+                <label for="input--text--03">Input text 03<span class="required">*</span></label>
+                <input type="text" id="input--text--03" name="input--text--03">
+            </div>
+            <div class="form-item">
+                <label for="input--text--04">Input text 04<span class="required">*</span></label>
+                <input type="text" id="input--text--04" name="input--text--04">
+            </div>
+            <!-- <div class="form-item form-item--file">
+                <label for="file">Choose a file</label>
+                <input type="file" name="file" id="file" class="inputfile" />
+            </div> -->
 
-	<main>
-		<h1>Hello World !!!!</h1>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est fugiat voluptatibus magnam, facilis error corporis beatae non minus eius unde doloremque ipsum ratione, voluptate qui ut esse, quod a dignissimos.</p>
-		<a href="#">link</a>
-		<h2>titre 2</h2>
-		<h3>titre 3</h3>
+            <div class="form-item form-item--file">
+                <input type="file" name="file" id="file" class="inputfile" />
+                <label for="file"><span></span><i>Choose a file…</i></label>
+            </div>
 
-		<hr />
 
-		<span class="pyxicom-facebook-logo"></span>
-	</main>
+            <div class="form-item">
+                <label>Select</label>
+                <select>
+                    <option>Option 01</option>
+                    <option>Option 02</option>
+                    <option>Option 03</option>
+                    <option>Option 04</option>
+                </select>
+            </div>
+            <div class="row">
+                <div class="radio">
+                    <input type="radio" id="radio--01" name="radio">
+                    <label for="radio--01">radio 01</label>
+                </div>
+                <div class="radio">
+                    <input type="radio" id="radio--02" name="radio">
+                    <label for="radio--02">radio 02</label>
+                </div>
+                <div class="radio">
+                    <input type="radio" id="radio--03" name="radio">
+                    <label for="radio--03">radio 03</label>
+                </div>
+                <div class="radio">
+                    <input type="radio" id="radio--04" name="radio">
+                    <label for="radio--04">radio 04</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="checkbox">
+                    <input type="checkbox" id="checkbox--01" name="checkbox">
+                    <label for="checkbox--01">checkbox 01</label>
+                </div>
+                <div class="checkbox">
+                    <input type="checkbox" id="checkbox--02" name="checkbox">
+                    <label for="checkbox--02">checkbox 02</label>
+                </div>
+                <div class="checkbox">
+                    <input type="checkbox" id="checkbox--03" name="checkbox">
+                    <label for="checkbox--03">checkbox 03</label>
+                </div>
+                <div class="checkbox">
+                    <input type="checkbox" id="checkbox--04" name="checkbox">
+                    <label for="checkbox--04">checkbox 04</label>
+                </div>
+            </div>
+        </form>
+        <main class="content">
+            <div class="c-wysiwyg">
+                <!-- wysiwyg content -->
+                <h1>Titre du page H1</h1>
+                <h2>Titre H2</h2>
+                <h3>Titre H3</h3>
+                <h4>Titre H4</h4>
+                <h5>Titre H5</h5>
+                <h6>Titre h6</h6>
+                <img src="https://placehold.it/400x400/6680bb/f86700?text=400x400" class="align-left" alt="alt">
+                <p>&nbsp;is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                <p>&nbsp;is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                <p>&nbsp;is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                <hr>
+                <ul>
+                    <li>Lorem ipsum</li>
+                    <li>Lorem ipsum</li>
+                    <li>Lorem ipsum
+                        <ul>
+                            <li>Lorem ipsum</li>
+                            <li>Lorem ipsum</li>
+                            <li>Lorem ipsum</li>
+                        </ul>
+                    </li>
+                </ul>
+                <ol>
+                    <li>Lorem ipsum</li>
+                    <li>Lorem ipsum</li>
+                    <li>Lorem ipsum</li>
+                </ol>
+                <p>&nbsp;is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Lorem Ipsum</th>
+                            <th>Lorem Ipsum</th>
+                            <th>Lorem Ipsum</th>
+                            <th>Lorem Ipsum</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Lorem Ipsum</td>
+                            <td>Lorem Ipsum</td>
+                            <td>Lorem Ipsum</td>
+                            <td>Lorem Ipsum</td>
+                        </tr>
+                        <tr>
+                            <td>Lorem Ipsum</td>
+                            <td>Lorem Ipsum</td>
+                            <td>Lorem Ipsum</td>
+                            <td>Lorem Ipsum</td>
+                        </tr>
+                        <tr>
+                            <td>Lorem Ipsum</td>
+                            <td>Lorem Ipsum</td>
+                            <td>Lorem Ipsum</td>
+                            <td>Lorem Ipsum</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <blockquote>
+                    <strong>Lorem Ipsum</strong>&nbsp;is simply dummy text of the printing and typesetting industry. <a href="https://www.google.com/">Lorem Ipsum</a> has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release <strong>of Letraset sheets containing</strong> Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker<em> including versions</em> of Lorem Ipsum.
+                </blockquote>
+                <iframe src="https://www.youtube.com/embed/EJUlMUG5UdM" frameborder="0"></iframe>
+            </div>
+            <hr>
+            <h1>Buttons</h1>
+            <p>
+                <a href="#" class="button">Button default</a>
+                <a href="#" class="button button--transparency">Button default transparent</a>
+            </p>
+            <hr>
+            <h1>Tabs</h1>
+            <div class="row">
+                <div class="tabs">
+                    <ul class="tab-links">
+                        <li class="active"><a href="#tab1">Tab #1</a></li>
+                        <li><a href="#tab2">Tab #2</a></li>
+                        <li><a href="#tab3">Tab #3</a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <div id="tab1" class="tab-panel active">
+                            <p>Tab #1 content goes here!</p>
+                            <p>Donec pulvinar neque sed semper lacinia. Curabitur lacinia ullamcorper nibh; quis imperdiet velit eleifend ac. Donec blandit mauris eget aliquet lacinia! Donec pulvinar massa interdum risus ornare mollis.</p>
+                        </div>
+                        <div id="tab2" class="tab-panel">
+                            <p>Tab #2 content goes here!</p>
+                            <p>Donec pulvinar neque sed semper lacinia. Curabitur lacinia ullamcorper nibh; quis imperdiet velit eleifend ac. Donec blandit mauris eget aliquet lacinia! Donec pulvinar massa interdum risus ornare mollis. In hac habitasse platea dictumst. Ut euismod tempus hendrerit. Morbi ut adipiscing nisi. Etiam rutrum sodales gravida! Aliquam tellus orci, iaculis vel.</p>
+                        </div>
+                        <div id="tab3" class="tab-panel">
+                            <p>Tab #3 content goes here!</p>
+                            <p>Donec pulvinar neque sed semper lacinia. Curabitur lacinia ullamcorper nibh; quis imperdiet velit eleifend ac. Donec blandit mauris eget aliquet lacinia! Donec pulvinar massa interdum ri.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <h1>Accordion</h1>
+            <div class="row">
+                <div class="accordion">
+                    <div class="accordion__section">
+                        <a class="accordion__title" href="#accordion-1">Accordion Section #1</a>
+                        <div id="accordion-1" class="accordion__content">
+                            <p>Mauris interdum fringilla augue vitae tincidunt. Curabitur vitae tortor id eros euismod ultrices. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Praesent nulla mi, rutrum ut feugiat at, vestibulum ut neque? Cras tincidunt enim vel aliquet facilisis. Duis congue ullamcorper vehicula. Proin nunc lacus, semper sit amet elit sit amet, aliquet pulvinar erat. Nunc pretium quis sapien eu rhoncus. Suspendisse ornare gravida mi, et placerat tellus tempor vitae.</p>
+                        </div><!--end .accordion-section-content-->
+                    </div><!--end .accordion-section-->
+                    <div class="accordion-section">
+                        <a class="accordion__title" href="#accordion-2">Accordion Section #2</a>
+                        <div id="accordion-2" class="accordion__content">
+                            <p>Mauris interdum fringilla augue vitae tincidunt. Curabitur vitae tortor id eros euismod ultrices. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Praesent nulla mi, rutrum ut feugiat at, vestibulum ut neque? Cras tincidunt enim vel aliquet facilisis. Duis congue ullamcorper vehicula. Proin nunc lacus, semper sit amet elit sit amet, aliquet pulvinar erat. Nunc pretium quis sapien eu rhoncus. Suspendisse ornare gravida mi, et placerat tellus tempor vitae.</p>
+                        </div><!--end .accordion__content-->
+                    </div><!--end .accordion-section-->
+                    <div class="accordion-section">
+                        <a class="accordion__title" href="#accordion-3">Accordion Section #3</a>
+                        <div id="accordion-3" class="accordion__content">
+                            <p>Mauris interdum fringilla augue vitae tincidunt. Curabitur vitae tortor id eros euismod ultrices. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Praesent nulla mi, rutrum ut feugiat at, vestibulum ut neque? Cras tincidunt enim vel aliquet facilisis. Duis congue ullamcorper vehicula. Proin nunc lacus, semper sit amet elit sit amet, aliquet pulvinar erat. Nunc pretium quis sapien eu rhoncus. Suspendisse ornare gravida mi, et placerat tellus tempor vitae.</p>
+                        </div><!--end .accordion-section-content-->
+                    </div><!--end .accordion-section-->
+                </div><!--end .accordion-->
+            </div>
+            <hr>
+            <h1>popup</h1>
+            <a class="button" data-popup-open="popup-1" href="#">Open Popup #1</a>
+            <div class="popup" data-popup="popup-1">
+                <div class="popup__inner">
+                    <h2>Wow! This is Awesome! (Popup #1)</h2>
+                    <p>Donec in volutpat nisi. In quam lectus, aliquet rhoncus cursus a, congue et arcu. Vestibulum tincidunt neque id nisi pulvinar aliquam. Nulla luctus luctus ipsum at ultricies. Nullam nec velit dui. Nullam sem eros, pulvinar sed pellentesque ac, feugiat et turpis. Donec gravida ipsum cursus massa malesuada tincidunt. Nullam finibus nunc mauris, quis semper neque ultrices in. Ut ac risus eget eros imperdiet posuere nec eu lectus.</p>
+                    <p><a data-popup-close="popup-1" href="#">Close</a></p>
+                    <a class="popup__close" data-popup-close="popup-1" href="#">x</a>
+                </div>
+            </div>
+            <hr>
+            <h1>Pagination</h1>
+            <div class="c-paginate">
+                <div class="row">
+                    <div class="columns">
+                        <ol>
+                            <li><a class="prev" href="">&lt;</a></li>
+                            <li><a href="">1</a></li>
+                            <li><a href="">2</a></li>
+                            <li class="current">3</li>
+                            <li><a href="">4</a></li>
+                            <li><a href="">5</a></li>
+                            <li><a class="next" href="">&gt;</a></li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
 
-	<footer></footer>
-	
-
-	<script src="assets/scripts/jquery.drupal.scripts.min.js"></script>
+        </main>
+        <footer>
+            <div class="main"></div>
+        </footer>
+        <span class="c-action__gototop"></span>
+    </div>
+    <script type="text/javascript" src="assets/js/lib/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="assets/js/lib/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="assets/js/scripts2.js"></script>
 </body>
 </html>
