@@ -20,6 +20,7 @@
 
 /*************************************/
 
+// require
 
 
 var gulp = require('gulp');
@@ -36,18 +37,40 @@ var reload      = browserSync.reload;
 var ngrok = require('ngrok');
 var psi = require('psi');
 
+// Config
+
+var config = require("./config");
+
+// var site = config.host;
+// var key = "";
+var site = 'public/index.html';
+var key = '';
+
 // Please feel free to use the `nokey` option to try out PageSpeed
 // Insights as part of your build process. For more frequent use,
 // we recommend registering for your own API key. For more info:
 // https://developers.google.com/speed/docs/insights/v2/getting-started
 
+gulp.task('mobile', function () {
+    return psi(site, {
+        // key: key
+        nokey: 'true',
+        strategy: 'mobile',
+    }).then(function (data) {
+        console.log('Speed score: ' + data.ruleGroups.SPEED.score);
+        console.log('Usability score: ' + data.ruleGroups.USABILITY.score);
+    });
+});
 
-/*************************************/
-
-var config = require("./config");
-
-var site = config.host;
-var key = "";
+gulp.task('desktop', function () {
+    return psi(site, {
+        nokey: 'true',
+        // key: key,
+        strategy: 'desktop',
+    }).then(function (data) {
+        console.log('Speed score: ' + data.ruleGroups.SPEED.score);
+    });
+});
 
 /*************************************/
 
@@ -55,6 +78,8 @@ var key = "";
 var FAVICON_DATA_FILE = config.favicon.srcFile;
 
 /*************************************/
+
+//  tasks
 
 require("./tasks/scripts.task")(gulp, plugins, browserSync, config);
 require("./tasks/imagemin.task")(gulp, plugins, config);
@@ -81,5 +106,8 @@ require("./tasks/ngrok.task")(gulp, ngrok);
 //     cb
 //   );
 // });
+
+
+// defualt task
 
 gulp.task('default', ['styles', 'scripts', 'html', 'imagemin', 'watch', 'server']);

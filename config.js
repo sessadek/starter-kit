@@ -8,8 +8,6 @@ module.exports = {
     "src": "source/scss/local/**/*.scss",
     "dest": "public/assets/stylesheets/local"
   },
-  "foundation": [
-  ]
   "stylesVendor": {
     "src": "source/scss/vendor/foundation/assets/*.scss",
     "dest": "public/assets/stylesheets/vendor/foundation"
